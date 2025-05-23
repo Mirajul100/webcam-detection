@@ -26,7 +26,7 @@ while True:
 
     contour_frame , check = cv2.findContours(dil_frame , cv2.RETR_EXTERNAL , cv2.CHAIN_APPROX_SIMPLE)
     for contour in contour_frame:
-        if cv2.contourArea(contour) < 3000:
+        if cv2.contourArea(contour) < 5000:
             continue
         x , y , w , h = cv2.boundingRect(contour)
         cv2.rectangle(frame , pt1=(x, y) , pt2=(x+w , y+h) , color=(0 , 255 , 0) , thickness=2)
