@@ -50,14 +50,14 @@ while True:
     
     cv2.putText(img=frame , text=datetime.now().strftime("%Y:%m:%d") , org=(15 , 50) 
                 , fontFace=cv2.FONT_HERSHEY_PLAIN 
-                , color=(0 , 0 ,0)
+                , color=(0 , 0 , 0)
                 ,fontScale=1
                 , thickness=1
                 ,lineType=cv2.LINE_AA)
     
     cv2.putText(img=frame , text=datetime.now().strftime("%H:%M:%S") , org=(15 , 70) 
                 , fontFace=cv2.FONT_HERSHEY_PLAIN 
-                , color=(0 , 0 ,0)
+                , color=(0 , 0 , 0)
                 ,fontScale=1
                 , thickness=1
                 ,lineType=cv2.LINE_AA)
