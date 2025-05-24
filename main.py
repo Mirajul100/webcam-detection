@@ -30,7 +30,7 @@ while True:
 
     contour_frame , check = cv2.findContours(dil_frame , cv2.RETR_EXTERNAL , cv2.CHAIN_APPROX_TC89_L1)
     for contour in contour_frame:
-        if cv2.contourArea(contour) < 3000:
+        if cv2.contourArea(contour) < 3500:
             continue
         x , y , w , h = cv2.boundingRect(contour)
         rectangle = cv2.rectangle(frame , pt1=(x, y) , pt2=(x+w , y+h) , color=(0 , 255 , 0) , thickness=2)
@@ -44,18 +44,21 @@ while True:
     if status_list[0] == 1 and status_list[1] == 0:
         email_send()
 
-    cv2.putText(img=frame, text=datetime.now().strftime("%A"), org=(15, 30),
-                fontFace=cv2.FONT_HERSHEY_PLAIN,
-                fontScale=1, color=(0, 0, 0), thickness=1, lineType=cv2.LINE_AA)
+    cv2.putText(img=frame, text=datetime.now().strftime("%A"), org=(10, 25)
+                , fontFace=cv2.FONT_HERSHEY_PLAIN
+                , fontScale=1
+                , color=(0, 0, 0)
+                , thickness=1
+                , lineType=cv2.LINE_AA)
     
-    cv2.putText(img=frame , text=datetime.now().strftime("%Y:%m:%d") , org=(15 , 50) 
+    cv2.putText(img=frame , text=datetime.now().strftime("%Y:%m:%d") , org=(10 , 45) 
                 , fontFace=cv2.FONT_HERSHEY_PLAIN 
                 , color=(0 , 0 , 0)
                 ,fontScale=1
                 , thickness=1
                 ,lineType=cv2.LINE_AA)
     
-    cv2.putText(img=frame , text=datetime.now().strftime("%H:%M:%S") , org=(15 , 70) 
+    cv2.putText(img=frame , text=datetime.now().strftime("%H:%M:%S") , org=(10 , 65) 
                 , fontFace=cv2.FONT_HERSHEY_PLAIN 
                 , color=(0 , 0 , 0)
                 ,fontScale=1
